@@ -56,7 +56,6 @@ window.addEventListener("DOMContentLoaded", () => {
           button.addEventListener("click", () => {
             listening ? stop() : start();
             listening = !listening;
-            api.executeCommand('toggleLobby', true)
           });
     }
    

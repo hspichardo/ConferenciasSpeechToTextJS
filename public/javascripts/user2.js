@@ -9,7 +9,7 @@ const options = {
     },
     parentNode: document.querySelector('#meeta')
 };
-const api = new JitsiMeetExternalAPI(domain, options);
+const api2 = new JitsiMeetExternalAPI(domain, options);
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
           button.addEventListener("click", () => {
             listening ? stop() : start();
             listening = !listening;
-            api.executeCommand('toggleLobby', true)
+    
           });
     }
    
