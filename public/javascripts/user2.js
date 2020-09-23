@@ -4,10 +4,10 @@ const options = {
     width: 700,
     height: 700,
     userInfo: {
-        email: 'user1@user1.com',
-        displayName: 'Usuario1'
+        email: 'user2@user1.com',
+        displayName: 'Usuario2'
     },
-    parentNode: document.querySelector('#meet')
+    parentNode: document.querySelector('#meeta')
 };
 const api = new JitsiMeetExternalAPI(domain, options);
 
