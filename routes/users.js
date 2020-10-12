@@ -23,7 +23,7 @@ router.post('/addTranscript', async function (req, res, next) {
       {transcript: req.body.transcript},
       {where: {UserId: 1, ConferenceId: 1} }
     );
-    res.send('Malena de mierda!!');
+    res.send('Transcript guardado exitosamente!');
 });
 
 router.get('/2', function(req, res, next) {
