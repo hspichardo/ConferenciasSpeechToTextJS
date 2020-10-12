@@ -1,6 +1,6 @@
 const domain = 'meet.jit.si';
 const options = {
-    roomName: 'JitsiMeetAPIExample',
+    roomName: 'ConferenciaTestT2S',
     width: 700,
     height: 700,
     userInfo: {
@@ -26,8 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
         button.setAttribute('class','btn btn-info');
         var listening = false;
         const recognition = new SpeechRecognition();
-        console.log(recognition);
-        recognition.lang = 'es-ES'
+       // console.log(recognition);
+        recognition.lang = "es-ES";
         var start = () => {
             recognition.start();
             button.setAttribute('class','btn btn-danger');
@@ -36,6 +36,22 @@ window.addEventListener("DOMContentLoaded", () => {
         var stop = () => {
             recognition.stop();
             button.setAttribute('class','btn btn-info');
+
+            
+
+               $.ajax({
+                    url: "http://localhost:3000/users/addTranscript",
+                    data: {"transcript": document.getElementsByClassName("final")[0].textContent},
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data){
+                     alert('guardado los datos');
+                    },
+                    complete: function(){
+                   // $('#result').css('visibility','hidden');
+                    }
+                    }); //de $.ajax
+           
       button.textContent = "Start listening";
         };
         const onResult = event => {
@@ -48,6 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         p.appendChild(text);
         result.appendChild(p);
+        
       }
         };
         recognition.continuous = true;

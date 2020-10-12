@@ -1,6 +1,6 @@
 const domain = 'meet.jit.si';
 const options = {
-    roomName: 'JitsiMeetAPIExample',
+    roomName: 'ConferenciaTestT2S',
     width: 700,
     height: 700,
     userInfo: {
