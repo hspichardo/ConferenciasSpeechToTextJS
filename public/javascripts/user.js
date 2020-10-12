@@ -1,6 +1,6 @@
 const domain = 'meet.jit.si';
 const options = {
-    roomName: 'JitsiMeetAPIExample',
+    roomName: 'DemoConferenciasJS',
     width: 700,
     height: 700,
     userInfo: {
@@ -53,6 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
         recognition.continuous = true;
           recognition.interimResults = true;
           recognition.addEventListener("result", onResult);
+          window.onload = (event) => {
+            recognition.start();
+            button.setAttribute('class','btn btn-danger');
+            button.textContent = "Stop listening";
+            listening = true;
+          };
           button.addEventListener("click", () => {
             listening ? stop() : start();
             listening = !listening;
